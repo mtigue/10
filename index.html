@@ -60,7 +60,7 @@ $("div.ui-collapsible-set").live("expand", function(e) {
 </ul>
 		
 		<div style="margin-left:auto; margin-right:auto; text-align:center; width:auto;">
-		<img src="images/icon.png" height="300" width="300">
+		<img src="images/icon.png" height="280" width="280">
 		</div>
 		
 	</div><!-- /content -->
@@ -960,7 +960,12 @@ When it is your turn for Confession, go and sit down or kneel near
                                 
                                $('#eraseSins').click(function(){
 
-                               
+                                apprise ("Your sins have been erased.");
+  
+  
+  								window.location = "#home";
+  								
+  								
                                          
                                         $("div#first :checkbox").each(function() {
                                         $(this).prop('checked', false);
@@ -977,10 +982,7 @@ When it is your turn for Confession, go and sit down or kneel near
 							     $("#textArea").val('');							
 		
 								 	
-							    apprise ("Your sins have been erased.");
-  
-  
-  								window.location = "#home";
+							   
 
 									
 									 }); // end erase sins function
