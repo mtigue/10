@@ -6,11 +6,15 @@
 	
 	<!----css----->
 	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
+	<link rel="stylesheet" href="css/apprise.css" />
 	<link rel="stylesheet" href="css/web4u.css" />
 	
 	
 	<!----js---->
 	<script src="js/jquery-1.8.2.min.js"></script>
+	
+	<script src="js/apprise-1.5.full.js"></script>
+	
 	<script src="js/jquery.mobile-1.2.0.min.js"></script>
 	
 	
@@ -22,8 +26,18 @@
 <!----------------------------page one------------------------------------------------>
 
 
+<script>
 
-<div data-role="page" data-theme="a" data-add-back-btn="true" style="background-colors:#000000;">
+$("div.ui-collapsible-set").live("expand", function(e) {
+    var top = $(e.target).offset().top;
+        if ($(window).scrollTop() > top)
+            $(window).scrollTop(top);
+});
+
+</script>
+
+
+<div data-role="page" id="home" data-theme="a" data-add-back-btn="true" style="background-colors:#000000;">
 
 	<div data-role="header">
 		<h1>Confession</h1>
@@ -46,7 +60,7 @@
 </ul>
 		
 		<div style="margin-left:auto; margin-right:auto; text-align:center; width:auto;">
-		<img src="images/icon.png">
+		<img src="images/icon.png" height="300" width="300">
 		</div>
 		
 	</div><!-- /content -->
@@ -934,17 +948,17 @@ When it is your turn for Confession, go and sit down or kneel near
 
                                     var selectedChk = '';
                                     $("div#first :checkbox:checked").each(function() {
-                                        selectedChk += $(this).val()+"<br>";
+                                        selectedChk += $(this).val()+"<p>";
                                     });
                                     
                                     
                                     var element=document.getElementById("sinArea");
-									element.innerHTML=selectedChk + "<br>" + text;
+									element.innerHTML=selectedChk + "<p>" + text;
 
-                                });
+                                }); // end get checked
                                 
                                 
-                                $('#eraseSins').click(function(){
+                               $('#eraseSins').click(function(){
 
                                
                                          
@@ -952,21 +966,29 @@ When it is your turn for Confession, go and sit down or kneel near
                                         $(this).prop('checked', false);
                                         $("input:checkbox").checkboxradio("refresh");
                                        
-                                    });
+                                    });  // end checkbox removal
 
 
                                    
                                  var element=document.getElementById("sinArea");
-									element.innerHTML="Yah! God Loves You";
+									element.innerHTML="";
 									
 							
 							     $("#textArea").val('');							
 		
+								 	
+							    apprise ("Your sins have been erased.");
+  
+  
+  								window.location = "#home";
+
 									
-								//	$("#sinArea").fadeOut("slow");
+									 }); // end erase sins function
+  
+                                						
+		
 									
-									 });
-									   
+					
                                 
                         
                                 
