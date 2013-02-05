@@ -803,7 +803,7 @@ Jesus death on the cross is what truly makes up for our sins, but doing an act o
 	
                                      $('#clearSins').click(function(){
 
-                               
+                               			
                                          
                                         $("div#first :checkbox").each(function() {
                                         $(this).prop('checked', false);
@@ -943,6 +943,8 @@ When it is your turn for Confession, go and sit down or kneel near
 	<script>
   // Get all checked checkboxes
                                 $('#getChecked').click(function(){
+                                
+                                $.mobile.loading('show')
 
 									var text = $('textarea#textArea').val().replace('\r\n', '<br />');;
 
@@ -954,15 +956,15 @@ When it is your turn for Confession, go and sit down or kneel near
                                     
                                     var element=document.getElementById("sinArea");
 									element.innerHTML=selectedChk + "<p>" + text;
+									
+										$.mobile.loading('hide')
 
                                 }); // end get checked
                                                                 
                                $('#eraseSins').click(function(){
 
-                                
-  
-  
-  								
+$.mobile.loading('show')
+						
   								
   								
                                          
@@ -980,7 +982,8 @@ When it is your turn for Confession, go and sit down or kneel near
 							
 							     $("#textArea").val('');							
 		
-								 	
+					$.mobile.loading('hide')
+ 	
 							   apprise ("Your sins have been erased.");
 
 									
