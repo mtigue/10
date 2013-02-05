@@ -20,12 +20,39 @@
 	
 	<script>
 	
-	$.mobile.defaultPageTransition   = 'none'
-	$.mobile.defaultDialogTransition = 'none'
-	$.mobile.buttonMarkup.hoverDelay = 0
+	//attempts to speed things up
+	$.mobile.defaultPageTransition   = 'none';
+	$.mobile.defaultDialogTransition = 'none';
+	$.mobile.buttonMarkup.hoverDelay = 0;
+	$document.bind("touchstart", function(event){});
+
+</script>
+<script>
+	
+	// make collapsible items scroll to top on open
+	$("div.ui-collapsible-set").live("expand", function(e) {
+    var top = $(e.target).offset().top;
+        if ($(window).scrollTop() > top)
+            $(window).scrollTop(top);
+});
+		
+	</script>
+
+	
+	<script>
+	
+		
+	$( document ).bind( 'mobileinit', function(){
+  $.mobile.loader.prototype.options.text = "loading";
+  $.mobile.loader.prototype.options.textVisible = false;
+  $.mobile.loader.prototype.options.theme = "a";
+  $.mobile.loader.prototype.options.html = "";
+});
 	
 	
 	</script>
+
+	
 	
 	
 	
@@ -34,6 +61,9 @@
 
 <!----------------------------page one------------------------------------------------>
 <div data-role="page" id="home" data-theme="a" data-add-back-btn="true" style="background-colors:#000000;">
+
+
+
 
 	<div data-role="header">
 		<h1>Confession</h1>
@@ -963,7 +993,7 @@ When it is your turn for Confession, go and sit down or kneel near
 <div class="guide-section">
 		<h3>Penance</h3>
 		<p>
-		If the penance the priest gave you is a prayer or meditation that you can do now, then you can go to a place of prayer and do the penance. Or, if the penance is something you have to do later, remember to do it then. Doing the act of penance completes the Sacrament of Confession.
+		Remember to do the prayers or acts of penance the priest gave you. Doing the act of penance completes the Sacrament of Confession.
 		
 		
 		</p>
@@ -975,7 +1005,50 @@ When it is your turn for Confession, go and sit down or kneel near
 </div><!--end colapsible --->
 
 <div div style="clear:both"></div>
-   
+
+<div id='loadingmessage' style='display:none'>
+  <img src='ajax-loader.gif'/>
+</div>
+
+
+
+
+<a href="" id="test" data-role="button">
+test loader
+</a>
+<p>
+<a href="" id="stop" data-role="button">
+stop loader
+</a>
+<p>
+
+<script>
+
+ $('#test').tap(function(){
+ 
+	$.mobile.loading( 'show', {
+	text: 'Your sins are being erased.',
+	textVisible: true,
+	theme: 'a',
+	html: ""
+	});		 
+
+  }); 
+
+
+ $('#stop').tap(function(){
+
+$.mobile.loading( 'hide', {
+	text: 'Your sins are being erased.',
+	textVisible: true,
+	theme: 'a',
+	html: ""
+	});	
+
+  }); 
+  
+  </script>
+   </p>
 <a href="" data-role="button" data-theme="d" id="eraseSins" data-icon="delete" class="" data-textonly="false" data-textvisible="true" data-msgtext="Erasing your sins"  >Erase Sins</a> 
 	
 	
@@ -988,7 +1061,7 @@ When it is your turn for Confession, go and sit down or kneel near
   
                                 $('#getChecked').tap(function(){
                                 
-                           //     $.mobile.loading('show')
+                         
                            
                            			$.mobile.changePage("index.html#guide");
 
@@ -1003,59 +1076,41 @@ When it is your turn for Confession, go and sit down or kneel near
                                     var element=document.getElementById("sinArea");
 									element.innerHTML=selectedChk + "<p>" + text;
 									
-									//	$.mobile.loading('hide')
+								
 										
 										
 
                                 }); // end get checked
-                                                                
-                                                                
+
+                                                    
                                                           
                               $('#eraseSins').tap(function(){
-                               
-                               
-
-						//		$.mobile.loading('show');
-				
-									
-  									
-  										
+                              
   							
-						//		        $("div#first :checkbox").each(function() {
-                        //                $(this).prop('checked', false);
-                        //                $("input:checkbox").checkboxradio("refresh");
+							  //      $("div#first :checkbox").each(function() {
+                             //          $(this).prop('checked', false);
+                            //          $("input:checkbox").checkboxradio("refresh");
                                      
                                        
-                            //        });  // end checkbox removal
+                         //          });  // end checkbox removal
 
 
-                            //    var element=document.getElementById("sinArea");
-							//		element.innerHTML="";
+                           //   var element=document.getElementById("sinArea");
+							//	element.innerHTML="";
 									
-							 //    $("#textArea").val('');							
+							//     $("#textArea").val('');							
 		
-						//	   $.mobile.loading('hide');
-		
-							//	$.mobile.loadPage("index.html");
-							
-
-		//	
-	
-						//	document.location.href = "index.html";
-							
-							
-								 	window.location = "index.html";
-									 
-									 }); // end erase sins function
-  
-                                						
-		
-									
 					
-                                
-                        
-                                
-                                
+				//	  $.mobile.changePage("index.html");
+				
+				 	apprise ("Your sins have been erased.");
+					
+								 	window.location = "index.html"; 	// works great to erase	 
+								 	
+									 
+			 }); // end erase sins function
+  
+                                 
                                 
 
 </script>

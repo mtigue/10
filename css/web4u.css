@@ -25,6 +25,9 @@
 }
 
 
+.loading-invisible: {display:none !important; }
+
+
 
 .ui-page, .ui-mobile-viewport {
 	background: url(images/tiling_stripes3.gif);
