@@ -6,17 +6,26 @@
 	
 	<!----css----->
 	<link rel="stylesheet" href="css/jquery.mobile-1.2.0.min.css" />
-	<link rel="stylesheet" href="css/apprise.css" />
+	<link rel="stylesheet" href="css/apprise.min.css" />
 	<link rel="stylesheet" href="css/web4u.css" />
 	
-	
-	<!----js---->
+		<!----js---->
 	<script src="js/jquery-1.8.2.min.js"></script>
 	
-	<script src="js/apprise-1.5.full.js"></script>
+	<script src="js/apprise-1.5.min.js"></script>
 	
 	<script src="js/jquery.mobile-1.2.0.min.js"></script>
+	<!--end js-->
+
 	
+	<script>
+	
+	$.mobile.defaultPageTransition   = 'none'
+	$.mobile.defaultDialogTransition = 'none'
+	$.mobile.buttonMarkup.hoverDelay = 0
+	
+	
+	</script>
 	
 	
 	
@@ -24,54 +33,7 @@
 <body> 
 
 <!----------------------------page one------------------------------------------------>
-
-
-<script>
-
-$("div.ui-collapsible-set").live("expand", function(e) {
-    var top = $(e.target).offset().top;
-        if ($(window).scrollTop() > top)
-            $(window).scrollTop(top);
-});
-
-	$(document).on("click", ".show-page-loading-msg", function() {
-			var $this = $( this ),
-				theme = $this.jqmData("theme") || $.mobile.loader.prototype.options.theme,
-				msgText = $this.jqmData("msgtext") || $.mobile.loader.prototype.options.text,
-				textVisible = $this.jqmData("textvisible") || $.mobile.loader.prototype.options.textVisible,
-				textonly = !!$this.jqmData("textonly");
-				html = $this.jqmData("html") || "";
-			$.mobile.loading( 'show', {
-					text: msgText,
-					textVisible: textVisible,
-					theme: theme,
-					textonly: textonly,
-					html: html
-			});
-		})
-		
-		
-		.on("click", ".hide-page-loading-msg", function() {
-			$.mobile.loading( 'hide' );
-		});
-
-
-
-</script>
-
-
 <div data-role="page" id="home" data-theme="a" data-add-back-btn="true" style="background-colors:#000000;">
-
-
-<script>
-$.mobile.loading( 'hide' );
-
-	
-	</script>
-
-
-
-
 
 	<div data-role="header">
 		<h1>Confession</h1>
@@ -91,9 +53,9 @@ $.mobile.loading( 'hide' );
 
 
 
-	<li><a href="#intro" class="show-page-loading-msg" data-theme="a"  data-textonly="false" data-textvisible="false" data-msgtext="">Introduction</a></li>
-	<li><a href="#prepare" class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="">Prepare for Confession</a></li>
-	<li><a href="#guide" class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="">Guide to Confession</a></li>
+	<li><a href="#intro" class="show-page-loading-msg" data-prefetch data-theme="a"  data-textonly="false" data-textvisible="false" data-msgtext="">Introduction</a></li>
+	<li><a href="#prepare" class="show-page-loading-msg" data-prefetch data-textonly="false" data-textvisible="false" data-msgtext="">Prepare for Confession</a></li>
+	<li><a href="#guide" class="show-page-loading-msg" data-prefetch data-textonly="false" data-textvisible="false" data-msgtext="">Guide to Confession</a></li>
 	
 </ul>
 		
@@ -105,11 +67,52 @@ $.mobile.loading( 'hide' );
 
 </div><!-- /page -->
 
+<!--------------------------end page one---------------------------------->
+
+<!----------------------------page erase------------------------------------------------>
+<div data-role="page" id="erase" data-theme="a" data-add-back-btn="true" style="background-colors:#000000;">
 
 
 
 
-<!--end page one--->
+
+	<div data-role="header">
+		<h1>Confession</h1>
+		
+	</div><!-- /header -->
+
+	<div data-role="content">	
+				
+
+
+<div style="clear:both"></div>
+
+Sins have been erased.!
+
+		
+<ul data-role="listview" data-inset="true" data-filter="false">
+
+
+
+	<li><a href="#intro" class="show-page-loading-msg" data-prefetch data-theme="a"  data-textonly="false" data-textvisible="false" data-msgtext="">Introduction</a></li>
+	<li><a href="#prepare" class="show-page-loading-msg" data-prefetch data-textonly="false" data-textvisible="false" data-msgtext="">Prepare for Confession</a></li>
+	<li><a href="#guide" class="show-page-loading-msg" data-prefetch data-textonly="false" data-textvisible="false" data-msgtext="">Guide to Confession</a></li>
+	
+</ul>
+		
+		<div style="margin-left:auto; margin-right:auto; text-align:center; width:auto;">
+		<img src="images/icon.png" height="280" width="280">
+		</div>
+		
+	</div><!-- /content -->
+
+</div><!-- /page -->
+
+<!--------------------------end page one---------------------------------->
+
+
+
+
 
 <!---------------------intro page---->
 
@@ -832,7 +835,7 @@ Jesus death on the cross is what truly makes up for our sins, but doing an act o
 
 
 
-	<a href="#guide" data-role="button" data-theme="d" id='getChecked' data-icon="check" data-iconpos="left">Go to the Confession Guide</a>
+	<a href="" data-role="button" data-theme="d" id='getChecked' data-icon="check" data-iconpos="left">Go to the Confession Guide</a>
 	
 
 	
@@ -973,16 +976,21 @@ When it is your turn for Confession, go and sit down or kneel near
 
 <div div style="clear:both"></div>
    
-<a href="#" data-role="button" data-theme="d" id="eraseSins" data-icon="delete" class="" data-textonly="false" data-textvisible="true" data-msgtext="Erasing your sins"  >Erase Sins</a> 
+<a href="" data-role="button" data-theme="d" id="eraseSins" data-icon="delete" class="" data-textonly="false" data-textvisible="true" data-msgtext="Erasing your sins"  >Erase Sins</a> 
 	
 	
 	
 	
-	<script>
+	<script> 	
   // Get all checked checkboxes
-                                $('#getChecked').click(function(){
+  
+    
+  
+                                $('#getChecked').tap(function(){
                                 
                            //     $.mobile.loading('show')
+                           
+                           			$.mobile.changePage("index.html#guide");
 
 									var text = $('textarea#textArea').val().replace('\r\n', '<br />');;
 
@@ -995,47 +1003,49 @@ When it is your turn for Confession, go and sit down or kneel near
                                     var element=document.getElementById("sinArea");
 									element.innerHTML=selectedChk + "<p>" + text;
 									
-										$.mobile.loading('hide')
+									//	$.mobile.loading('hide')
 										
 										
 
                                 }); // end get checked
                                                                 
-                               $('#eraseSins').click(function(){
+                                                                
+                                                          
+                              $('#eraseSins').tap(function(){
+                               
+                               
 
-								$.mobile.loading('show');
-						
-  								
-  								
-                                         
-                                        $("div#first :checkbox").each(function() {
-                                        $(this).prop('checked', false);
-                                        $("input:checkbox").checkboxradio("refresh");
-                                        
+						//		$.mobile.loading('show');
+				
+									
+  									
+  										
+  							
+						//		        $("div#first :checkbox").each(function() {
+                        //                $(this).prop('checked', false);
+                        //                $("input:checkbox").checkboxradio("refresh");
                                      
                                        
-                                    });  // end checkbox removal
+                            //        });  // end checkbox removal
 
 
-                                   
-                                 var element=document.getElementById("sinArea");
-									element.innerHTML="";
+                            //    var element=document.getElementById("sinArea");
+							//		element.innerHTML="";
 									
+							 //    $("#textArea").val('');							
+		
+						//	   $.mobile.loading('hide');
+		
+							//	$.mobile.loadPage("index.html");
 							
-							     $("#textArea").val('');							
-		
-		
-							//   $.mobile.loading('hide');
-		
+
+		//	
+	
+						//	document.location.href = "index.html";
 							
- 						
-							   
-							   
-						//	 $.mobile.changePage("index.html");
-							//	document.location.href = "index.html";
-									apprise ("Your sins have been erased.");	
-								
-									
+							
+								 	window.location = "index.html";
+									 
 									 }); // end erase sins function
   
                                 						
@@ -1050,6 +1060,7 @@ When it is your turn for Confession, go and sit down or kneel near
 
 </script>
 
+	
 
 
 
