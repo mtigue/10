@@ -49,6 +49,8 @@ $("div.ui-collapsible-set").live("expand", function(e) {
 					html: html
 			});
 		})
+		
+		
 		.on("click", ".hide-page-loading-msg", function() {
 			$.mobile.loading( 'hide' );
 		});
@@ -62,6 +64,8 @@ $("div.ui-collapsible-set").live("expand", function(e) {
 
 
 <script>
+$.mobile.loading( 'hide' );
+
 	
 	</script>
 
@@ -79,12 +83,15 @@ $("div.ui-collapsible-set").live("expand", function(e) {
 
 
 <div style="clear:both"></div>
+
+
+
 		
 <ul data-role="listview" data-inset="true" data-filter="false">
 
-<button href="#guide" class="show-page-loading-msg" data-theme="a" data-textonly="false" data-textvisible="false" data-msgtext="" data-icon="arrow-r" data-iconpos="right">Default loader</button>
 
-	<li><a href="#intro" class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="">Introduction</a></li>
+
+	<li><a href="#intro" class="show-page-loading-msg" data-theme="a"  data-textonly="false" data-textvisible="false" data-msgtext="">Introduction</a></li>
 	<li><a href="#prepare" class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="">Prepare for Confession</a></li>
 	<li><a href="#guide" class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="">Guide to Confession</a></li>
 	
@@ -966,7 +973,7 @@ When it is your turn for Confession, go and sit down or kneel near
 
 <div div style="clear:both"></div>
    
-<a href="#home" data-role="button" data-theme="d" id="eraseSins" data-icon="delete" class="show-page-loading-msg" data-textonly="false" data-textvisible="true" data-msgtext="Erasing your sins"  >Erase Sins</a> 
+<a href="#" data-role="button" data-theme="d" id="eraseSins" data-icon="delete" class="" data-textonly="false" data-textvisible="true" data-msgtext="Erasing your sins"  >Erase Sins</a> 
 	
 	
 	
@@ -975,7 +982,7 @@ When it is your turn for Confession, go and sit down or kneel near
   // Get all checked checkboxes
                                 $('#getChecked').click(function(){
                                 
-                                $.mobile.loading('show')
+                           //     $.mobile.loading('show')
 
 									var text = $('textarea#textArea').val().replace('\r\n', '<br />');;
 
@@ -989,12 +996,14 @@ When it is your turn for Confession, go and sit down or kneel near
 									element.innerHTML=selectedChk + "<p>" + text;
 									
 										$.mobile.loading('hide')
+										
+										
 
                                 }); // end get checked
                                                                 
                                $('#eraseSins').click(function(){
 
-$.mobile.loading('show')
+								$.mobile.loading('show');
 						
   								
   								
@@ -1002,6 +1011,8 @@ $.mobile.loading('show')
                                         $("div#first :checkbox").each(function() {
                                         $(this).prop('checked', false);
                                         $("input:checkbox").checkboxradio("refresh");
+                                        
+                                     
                                        
                                     });  // end checkbox removal
 
@@ -1013,10 +1024,17 @@ $.mobile.loading('show')
 							
 							     $("#textArea").val('');							
 		
-					$.mobile.loading('hide')
- 	
-							   apprise ("Your sins have been erased.");
-
+		
+							//   $.mobile.loading('hide');
+		
+							
+ 						
+							   
+							   
+							 $.mobile.changePage("index.html");
+							//	document.location.href = "index.html";
+									apprise ("Your sins have been erased.");	
+								
 									
 									 }); // end erase sins function
   
