@@ -58,11 +58,19 @@ apprise ("Your sins have been erased.");
             
 	
 
-<a href="index.html#home" data-role="button"	data-theme="d">Return to App Home</a>
+<a href="" data-role="button" id="home"	data-theme="d">Return to App Home Screen</a>
+
+
+<script>
+ $('#eraseSins').tap(function(){
+
+window.location = "index.html"; 
+
+}); 
+</script>
+
 		
 <ul data-role="listview" data-inset="true" data-filter="false">
-
-
 
 	<li><a href="index.html#intro" class="show-page-loading-msg" data-prefetch data-theme="a"  data-textonly="false" data-textvisible="false" data-msgtext="">Introduction</a></li>
 	<li><a href="index.html#prepare" class="show-page-loading-msg" data-prefetch data-textonly="false" data-textvisible="false" data-msgtext="">Prepare for Confession</a></li>
