@@ -81,11 +81,11 @@ This app is approachable, beautiful, complete, and prayerfully reflective.  Enjo
 
 <!-- If you do not want any permissions to be added to your app, add the
     following tag to your config.xml; you will still have the INTERNET
-    permission on your app, which PhoneGap requires. 
+    permission on your app, which PhoneGap requires. -->
 <preference name="permissions" value="none"/>
--->
 
-<feature name="http://api.phonegap.com/1.0/network"/>
+
+
 
 <!-- to enable individual permissions use the following examples --
 <feature name="http://api.phonegap.com/1.0/battery"/>
@@ -94,6 +94,8 @@ This app is approachable, beautiful, complete, and prayerfully reflective.  Enjo
 <feature name="http://api.phonegap.com/1.0/file"/>
 <feature name="http://api.phonegap.com/1.0/geolocation"/>
 <feature name="http://api.phonegap.com/1.0/media"/>
+
+<feature name="http://api.phonegap.com/1.0/network"/>
 
 <feature name="http://api.phonegap.com/1.0/notification"/>
 -->
