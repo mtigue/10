@@ -2,8 +2,8 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.web4uonline.confession"
-        version   = "1.1">
-    <name>The Confession App</name> 
+        version   = "1.1.2">
+    <name>Confession App: Catholic</name> 
 
     <description>
      The Confession app prepares you in a gentle and comforting way for the sacrament of Confession (Reconciliation). If you haven't been to Confession in a while or need help remembering what to say when, then this app is for you. Place a check mark next to items you'd like to confess, and they appear in the Confession Guide section for use during Confession. You can feel secure because no data is stored to the phone hard drive or to the internet. After Confession, you press "Erase My Sins" and your check mars are removed from the temporary cache in the phone. The sin check boxes are very large and easy to press. The overall tone is very welcoming and inviting. More sensitive topics are addressed with big words to help protect younger readers. Because no data is ever saved to the phone, no username or password needs to be used. This App is designed for the Catholic sacrament of Confession (also called Reconciliation or Penance) as celebrated in most of the western world. However, it may be used as a general examination of conscience by anyone or any group. 
