@@ -2,7 +2,7 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "com.web4uonline.confession"
-        version   = "1.0">
+        version   = "1.1">
     <name>The Confession App</name> 
 
     <description>
@@ -35,7 +35,7 @@ This app is approachable, beautiful, complete, and prayerfully reflective.  Enjo
     <preference name="exit-on-suspend" value="true" />
     <preference name="show-splash-screen-spinner" value="true" />
     
-    <preference name="splash-screen-duration" value="3000" />
+    <preference name="splash-screen-duration" value="4000" />
     
     
     
